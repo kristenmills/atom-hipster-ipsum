@@ -1,6 +1,6 @@
 # Hipster Ipsum
 
-Hipster Ipsum for Atom
+Hipster Ipsum for Atom.  Uses the [HipsterJesus](http://hipsterjesus.com) API.
 
 ## Usage
 
