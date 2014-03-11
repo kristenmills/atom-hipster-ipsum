@@ -1,4 +1,5 @@
-HipsterIpsum = require '../lib/hipster-ipsum'
+HipsterIpsum = require '../lib/main'
+{WorkspaceView} = require 'atom'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
@@ -6,24 +7,13 @@ HipsterIpsum = require '../lib/hipster-ipsum'
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe "HipsterIpsum", ->
-  activationPromise = null
+  [activationPromise, editor, editorView] = []
 
   beforeEach ->
     atom.workspaceView = new WorkspaceView
-    activationPromise = atom.packages.activatePackage('hipsterIpsum')
+    atom.workspaceView.openSync()
 
-  describe "when the hipster-ipsum:toggle event is triggered", ->
-    it "attaches and then detaches the view", ->
-      expect(atom.workspaceView.find('.hipster-ipsum')).not.toExist()
+    editorView = atom.workspaceView.getActiveView()
+    editor = editorView.getEditor()
 
-      # This is an activation event, triggering it will cause the package to be
-      # activated.
-      atom.workspaceView.trigger 'hipster-ipsum:toggle'
-
-      waitsForPromise ->
-        activationPromise
-
-      runs ->
-        expect(atom.workspaceView.find('.hipster-ipsum')).toExist()
-        atom.workspaceView.trigger 'hipster-ipsum:toggle'
-        expect(atom.workspaceView.find('.hipster-ipsum')).not.toExist()
+    activationPromise = atom.packages.activatePackage('hipster-ipsum')
