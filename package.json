@@ -2,9 +2,8 @@
   "name": "hipster-ipsum",
   "main": "./lib/hipster-ipsum",
   "version": "0.0.0",
-  "description": "A short description of your package",
-  "activationEvents": ["hipster-ipsum:toggle"],
-  "repository": "https://github.com/atom/hipster-ipsum",
+  "description": "Hipster Ipsum for Atom",
+  "repository": "https://github.com/kristenmills/atom-hipster-ipsum",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
