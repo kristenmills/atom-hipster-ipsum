@@ -1,10 +1,11 @@
 RangeFinder = require './range-finder'
+$ = require 'jquery'
 
-moudle.exports =
+module.exports =
 class HipsterIpusm
 
   constructor: ->
-    atom.workspaceView.command 'hipster-ipsum:paragraphs', '.editor', ->
+    atom.workspaceView.command 'hipster-ipsum:paragraphs', '.editor', =>
       editor = atom.workspaceView.getActivePaneItem()
       @generate(editor)
 
@@ -14,16 +15,10 @@ class HipsterIpusm
     selection = editor.getTextInBufferRange(ranges[0])
 
     if selection.match /^\d+$/
-      paragraphs = getParagraph(selection.parseInt())
+      num = selection.parseInt()
     else
-      paragraphs = getParagraph(atom.config.get('hipster-ipsum.defaultNumberOfParagraphs'))
+      num = atom.config.get('hipster-ipsum.defaultNumberOfParagraphs')
 
-    if selection == ''
-      editor.setTextAtCursorPosition(paragraphs)
-    else
-      editor.setTextInBufferRange(ranges[0], paragraphs)
-
-  getParagraphs: (num) ->
     if atom.config.get('hipster-ipsum.useHipsterLatin')
       type = 'hipster-latin'
     else
@@ -33,6 +28,6 @@ class HipsterIpusm
       html = true
     else
       html = false
-      
-    $.getJson "http://hipsterjesus.com/api/?paras=#{num}&type=#{type}&html=#{html}", (data) ->
-      return data.text
+
+    $.getJSON "http://hipsterjesus.com/api/?paras=#{num}&type=#{type}&html=#{html}", (data) ->
+      editor.setTextInBufferRange(ranges[0], data.text.replace(/\n/g, '\n\n'))

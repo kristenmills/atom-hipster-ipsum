@@ -1,6 +1,6 @@
 {
   "name": "hipster-ipsum",
-  "main": "./lib/hipster-ipsum",
+  "main": "./lib/main",
   "version": "0.0.0",
   "description": "Hipster Ipsum for Atom",
   "repository": "https://github.com/kristenmills/atom-hipster-ipsum",
@@ -9,5 +9,6 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
+    "jquery": "*"
   }
 }

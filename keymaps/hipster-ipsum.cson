@@ -9,6 +9,3 @@
 # https://atom.io/docs/latest/advanced/keymaps
 '.editor':
   'ctrl-alt-h': 'hipster-ipsum:paragraphs'
-
-'.platform-darwin .editor':
-  'cmd-alt-h': 'hipster-ipsum:paragraphs'

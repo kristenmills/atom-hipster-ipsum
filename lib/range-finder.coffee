@@ -25,7 +25,8 @@ class RangeFinder
 
   # Internal
   sortableRangeForEntireBuffer: ->
-    new Range [0, 0], [0, 0]
+    cursorPosition = @editor.getCursorBufferPosition()
+    new Range(cursorPosition, cursorPosition)
 
   # Internal
   sortableRangeFrom: (selectionRange) ->
