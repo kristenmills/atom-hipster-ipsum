@@ -1,5 +1,16 @@
-# hipster-ipsum package
+# Hipster Ipsum
 
-A short description of your package.
+Hipster Ipsum for Atom
 
-![A screenshot of your spankin' package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+## Usage
+
+Just press `ctrl-alt-h`.  If you are selecting a number, it will generate that number of paragraphs
+otherwise it will insert the default number at the current cursor position
+
+## Settings
+
+**defaultNumberOfParagraphs**: The number of paragraphs to do if no number is selected (*defaults to 4*)
+
+**includeParagraphTags**: Whether to include paragraph tags or not.  (*defaults to false*)
+
+**useHipsterLatin**: Whether to use hipster latin or not (*defaults to false*)

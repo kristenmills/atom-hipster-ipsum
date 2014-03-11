@@ -15,7 +15,7 @@ class HipsterIpusm
     selection = editor.getTextInBufferRange(ranges[0])
 
     if selection.match /^\d+$/
-      num = selection.parseInt()
+      num = parseInt(selection, 10)
     else
       num = atom.config.get('hipster-ipsum.defaultNumberOfParagraphs')
 
