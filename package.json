@@ -1,7 +1,7 @@
 {
   "name": "hipster-ipsum",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Hipster Ipsum for Atom",
   "repository": "https://github.com/kristenmills/atom-hipster-ipsum",
   "license": "MIT",
