@@ -8,7 +8,7 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 '.editor':
-  'ctrl-alt-h': 'hipster-ipsum:paragraph'
+  'ctrl-alt-h': 'hipster-ipsum:paragraphs'
 
 '.platform-darwin .editor':
-  'cmd-alt-h': 'hipster-ipsum:paragraph'
+  'cmd-alt-h': 'hipster-ipsum:paragraphs'
